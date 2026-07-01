@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Горящие туры 2026 — дешёвые путёвки от 65 000 ₽ | Travel Badya</title>
+  <meta name="description" content="Лучшие горящие туры на лето и осень 2026: Мальдивы, Дубай, Барселона, Стамбул, Рим, Париж, Токио и Прага. Бронируй онлайн — быстро и безопасно." />
+  <meta name="keywords" content="горящие туры 2026, дешёвые путёвки, туры онлайн, Мальдивы тур, Дубай тур, Барселона тур, Стамбул тур" />
+  <meta property="og:title" content="Горящие туры 2026 — от 65 000 ₽" />
+  <meta property="og:description" content="Бронируй горящие туры онлайн: Мальдивы, Дубай, Барселона, Рим, Токио и другие направления." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1200&q=80" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Travel Badya",
+    "description": "Подбор горящих туров и дешёвых авиабилетов по всему миру. AI-помощник 24/7.",
+    "url": "https://travelbadya.github.io",
+    "telephone": "+79175817777",
+    "sameAs": ["https://t.me/travel_Badya_Bot", "https://t.me/cheapflights_travel_ai"],
+    "offers": [
+      {"@type":"Offer","name":"Тур в Стамбул","price":"65000","priceCurrency":"RUB"},
+      {"@type":"Offer","name":"Тур в Рим","price":"89000","priceCurrency":"RUB"},
+      {"@type":"Offer","name":"Тур в Дубай","price":"95000","priceCurrency":"RUB"},
+      {"@type":"Offer","name":"Тур на Мальдивы","price":"245000","priceCurrency":"RUB"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Как купить дешёвые авиабилеты?",
+        "acceptedAnswer": {"@type":"Answer","text":"Бронируйте за 1–3 месяца до вылета, используйте гибкие даты и наш Telegram-бот для поиска горящих предложений."}
+      },
+      {
+        "@type": "Question",
+        "name": "Можно ли забронировать тур без предоплаты?",
+        "acceptedAnswer": {"@type":"Answer","text":"Да, на Travelata и Level.Travel доступно бронирование с оплатой в рассрочку. Условия зависят от тура."}
+      },
+      {
+        "@type": "Question",
+        "name": "Когда лучше лететь в Турцию?",
+        "acceptedAnswer": {"@type":"Answer","text":"Оптимальное время — май–июнь и сентябрь–октябрь. Жара спадает, море тёплое, цены ниже чем в июле–августе."}
+      }
+    ]
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #0066FF;
+      --primary-dark: #0050CC;
+      --accent: #FF6B35;
+      --dark: #0F1623;
+      --gray: #6B7280;
+      --light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --border: #E5E7EB;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--dark);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,.4);
+    }
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .logo span { color: #60A5FA; }
+    nav a {
+      color: #CBD5E1;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: .9rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    nav a:hover { color: #fff; }
+    .btn-tg {
+      background: #0088CC;
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 8px;
+      margin-left: 20px;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    .btn-tg:hover { background: #006ea6 !important; }
+
+    /* ── HERO ── */
+    .hero {
+      background:
+        linear-gradient(to bottom, rgba(15,22,35,.7) 0%, rgba(15,22,35,.4) 60%, var(--light) 100%),
+        url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1600&q=80') center/cover no-repeat;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 24px 120px;
+    }
+    .hero-inner { max-width: 720px; }
+    .hero-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: .8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #CBD5E1;
+      margin-bottom: 36px;
+    }
+    .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background .2s, transform .1s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .btn-secondary {
+      background: rgba(255,255,255,.15);
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,.4);
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background .2s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,.25); }
+
+    /* ── STATS ── */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding: 36px 24px;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2rem; font-weight: 800; color: var(--primary); }
+    .stat-label { font-size: .85rem; color: var(--gray); margin-top: 2px; }
+
+    /* ── SECTION ── */
+    .section { max-width: 1140px; margin: 0 auto; padding: 64px 24px; }
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .section-sub { color: var(--gray); margin-bottom: 40px; font-size: .95rem; }
+
+    /* ── TOURS GRID ── */
+    .tours-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 28px;
+    }
+    .tour-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,.07);
+      transition: transform .2s, box-shadow .2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .tour-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,.12); }
+    .tour-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .tour-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .tour-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: #FFF3EF;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      width: fit-content;
+    }
+    .tour-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .tour-dest { font-size: .85rem; color: var(--gray); margin-bottom: 12px; }
+    .tour-hotel {
+      font-size: .85rem;
+      color: #374151;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .tour-meta {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .tour-meta span {
+      font-size: .8rem;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .tour-dates {
+      font-size: .8rem;
+      color: #374151;
+      background: var(--light);
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+    .tour-price {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+    .tour-price small { font-size: .8rem; font-weight: 500; color: var(--gray); }
+    .tour-btns { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
+    .btn-book {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: .95rem;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .btn-book:hover { background: var(--primary-dark); }
+    .btn-alt {
+      background: var(--light);
+      color: var(--dark);
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: .85rem;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: background .2s;
+    }
+    .btn-alt:hover { background: #E5E7EB; }
+
+    /* ── WHY ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .why-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 24px 20px;
+      border: 1px solid var(--border);
+    }
+    .why-icon { font-size: 2rem; margin-bottom: 12px; }
+    .why-title { font-weight: 700; margin-bottom: 6px; }
+    .why-text { font-size: .875rem; color: var(--gray); }
+
+    /* ── CTA ── */
+    .cta {
+      background: linear-gradient(135deg, var(--primary) 0%, #0041A8 100%);
+      color: #fff;
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .cta h2 { font-size: 2rem; font-weight: 800; margin-bottom: 12px; }
+    .cta p { opacity: .85; margin-bottom: 32px; font-size: 1rem; }
+    .btn-white {
+      background: #fff;
+      color: var(--primary);
+      padding: 14px 36px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform .15s;
+    }
+    .btn-white:hover { transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: #9CA3AF;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: .85rem;
+      line-height: 2;
+    }
+    footer a { color: #60A5FA; text-decoration: none; }
+
+    @media (max-width: 600px) {
+      nav { display: none; }
+      .stats { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a class="logo" href="#"><span>✈</span> Travel Badya</a>
+  <nav>
+    <a href="#tours">Туры</a>
+    <a href="#why">Почему мы</a>
+    <a href="https://t.me/travel_Badya_Bot" class="btn-tg">🤖 Telegram-бот</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">🔥 Горящие туры 2026</span>
+    <h1>Путешествуй больше,<br>плати меньше</h1>
+    <p>Лучшие туры на лето и осень 2026 года. Авиа + отель + трансфер — всё включено. Бронирование онлайн за 5 минут.</p>
+    <div class="hero-btns">
+      <a href="#tours" class="btn-primary">Смотреть туры</a>
+      <a href="https://t.me/travel_Badya_Bot" class="btn-secondary">💬 Подобрать маршрут</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">8</div><div class="stat-label">направлений</div></div>
+  <div class="stat"><div class="stat-num">от 65K ₽</div><div class="stat-label">стоимость тура</div></div>
+  <div class="stat"><div class="stat-num">5–10 дней</div><div class="stat-label">длительность</div></div>
+  <div class="stat"><div class="stat-num">180 дней</div><div class="stat-label">гарантия цены</div></div>
+</div>
+
+<!-- TOURS -->
+<section class="section" id="tours">
+  <h2 class="section-title">Доступные туры</h2>
+  <p class="section-sub">Актуальные туры с вылетами из Москвы. Цены указаны на человека при двухместном размещении.</p>
+
+  <div class="tours-grid">
+
+    <!-- Рим -->
+    <div class="tour-card">
+      <img class="tour-img" src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&q=80" alt="Рим, Италия" loading="lazy" />
+      <div class="tour-body">
+        <span class="tour-badge">🏛️ Культура</span>
+        <div class="tour-name">Вечный Рим и Ватикан</div>
+        <div class="tour-dest">📍 Италия, Рим · 7 дней</div>
+        <div class="tour-hotel">🏨 Hotel Artemide 4★</div>
+        <div class="tour-dates">📅 10–17 августа 2026<br>📅 24–31 августа 2026</div>
+        <div class="tour-price">от 89 000 ₽ <small>/ чел.</small></div>
+        <div class="tour-btns">
+          <a class="btn-book" href="https://travelata.ru/tours/italy/" target="_blank" rel="noopener">🏖 Забронировать на Travelata</a>
+          <a class="btn-alt" href="https://level.travel/search/MOW-ROM/2026-08-10/7nights/2adults" target="_blank" rel="noopener">🏨 Level.Travel</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Париж -->
+    <div class="tour-card">
+      <img class="tour-img" src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=80" alt="Париж, Франция" loading="lazy" />
+      <div class="tour-body">
+        <span class="tour-badge">🗼 Романтика</span>
+        <div class="tour-name">Парижские каникулы</div>
+        <div class="tour-dest">📍 Франция, Париж · 5 дней</div>
+        <div class="tour-hotel">🏨 Mercure Paris Centre Tour Eiffel 4★</div>
+        <div class="tour-dates">📅 5–10 сентября 2026<br>📅 19–24 сентября 2026</div>
+        <div class="tour-price">от 79 000 ₽ <small>/ чел.</small></div>
+        <div class="tour-btns">
+          <a class="btn-book" href="https://travelata.ru/tours/france/" target="_blank" rel="noopener">🏖 Забронировать на Travelata</a>
+          <a class="btn-alt" href="https://level.travel/search/MOW-PAR/2026-09-05/5nights/2adults" target="_blank" rel="noopener">🏨 Level.Travel</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Токио -->
+    <div class="tour-card">
+      <img class="tour-img" src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80" alt="Токио, Япония" loading="lazy" />
+      <div class="tour-body">
+        <span class="tour-badge">🗾 Экзотика</span>
+        <div class="tour-name">Токио — город будущего</div>
+        <div class="tour-dest">📍 Япония, Токио + Киото · 10 дней</div>
+        <div class="tour-hotel">🏨 Shinjuku Granbell Hotel 4★</div>
+        <div class="tour-dates">📅 2–12 октября 2026<br>📅 16–26 октября 2026</div>
+        <div class="tour-price">от 159 000 ₽ <small>/ чел.</small></div>
+        <div class="tour-btns">
+          <a class="btn-book" href="https://travelata.ru/tours/japan/" target="_blank" rel="noopener">🏖 Забронировать на Travelata</a>
+          <a class="btn-alt" href="https://level.travel/search/MOW-TYO/2026-10-02/10nights/2adults" target="_blank" rel="noopener">🏨 Level.Travel</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Стамбул -->
+    <div class="tour-card">
+      <img class="tour-img" src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&q=80" alt="Стамбул, Турция" loading="lazy" />
+      <div class="tour-body">
+        <span class="tour-badge">🕌 Восток</span>
+        <div class="tour-name">Стамбул — мост двух миров</div>
+        <div class="tour-dest">📍 Турция, Стамбул · 6 дней</div>
+        <div class="tour-hotel">🏨 Movenpick Hotel Istanbul 5★</div>
+        <div class="tour-dates">📅 8–14 августа 2026<br>📅 22–28 августа 2026</div>
+        <div class="tour-price">от 65 000 ₽ <small>/ чел.</small></div>
+        <div class="tour-btns">
+          <a class="btn-book" href="https://travelata.ru/tours/turkey/" target="_blank" rel="noopener">🏖 Забронировать на Travelata</a>
+          <a class="btn-alt" href="https://level.travel/search/MOW-IST/2026-08-08/6nights/2adults" target="_blank" rel="noopener">🏨 Level.Travel</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Барселона -->
+    <div class="tour-card">
+      <img class="tour-img" src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&q=80" alt="Барселона, Испания" loading="lazy" />
+      <div class="tour-body">
+        <span class="tour-badge">🏖️ Пляж</span>
+        <div class="tour-name">Барселона и Коста-Брава</div>
+        <div class="tour-dest">📍 Испания, Барселона · 8 дней</div>
+        <div class="tour-hotel">🏨 Hotel Arts Barcelona 5★</div>
+        <div class="tour-dates">📅 3–11 июля 2026<br>📅 17–25 июля 2026</div>
+        <div class="tour-price">от 99 000 ₽ <small>/ чел.</small></div>
+        <div class="tour-btns">
+          <a class="btn-book" href="https://travelata.ru/tours/spain/" target="_blank" rel="noopener">🏖 Забронировать на Travelata</a>
+          <a class="btn-alt" href="https://level.travel/search/MOW-BCN/2026-07-03/8nights/2adults" target="_blank" rel="noopener">🏨 Level.Travel</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Мальдивы -->
+    <div class="tour-card">
+      <img class="tour-img" src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&q=80" alt="Мальдивы" loading="lazy" />
+      <div class="tour-body">
+        <span class="tour-badge">🏝️ Люкс</span>
+        <div class="tour-name">Мальдивы — рай на земле</div>
+        <div class="tour-dest">📍 Мальдивы · 7 дней</div>
+        <div class="tour-hotel">🏨 Sun Island Resort & Spa 5★</div>
+        <div class="tour-dates">📅 1–8 сентября 2026<br>📅 15–22 сентября 2026</div>
+        <div class="tour-price">от 245 000 ₽ <small>/ чел.</small></div>
+        <div class="tour-btns">
+          <a class="btn-book" href="https://travelata.ru/tours/maldive/" target="_blank" rel="noopener">🏖 Забронировать на Travelata</a>
+          <a class="btn-alt" href="https://level.travel/search/MOW-MLE/2026-09-01/7nights/2adults" target="_blank" rel="noopener">🏨 Level.Travel</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Дубай -->
+    <div class="tour-card">
+      <img class="tour-img" src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80" alt="Дубай, ОАЭ" loading="lazy" />
+      <div class="tour-body">
+        <span class="tour-badge">🏙️ Люкс</span>
+        <div class="tour-name">Дубай — город мечты</div>
+        <div class="tour-dest">📍 ОАЭ, Дубай · 5 дней</div>
+        <div class="tour-hotel">🏨 Atlantis The Palm 5★</div>
+        <div class="tour-dates">📅 12–17 августа 2026<br>📅 26–31 августа 2026</div>
+        <div class="tour-price">от 95 000 ₽ <small>/ чел.</small></div>
+        <div class="tour-btns">
+          <a class="btn-book" href="https://travelata.ru/tours/uae/" target="_blank" rel="noopener">🏖 Забронировать на Travelata</a>
+          <a class="btn-alt" href="https://level.travel/search/MOW-DXB/2026-08-12/5nights/2adults" target="_blank" rel="noopener">🏨 Level.Travel</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Прага + Вена -->
+    <div class="tour-card">
+      <img class="tour-img" src="https://images.unsplash.com/photo-1541849546-216549ae216d?w=800&q=80" alt="Прага и Вена" loading="lazy" />
+      <div class="tour-body">
+        <span class="tour-badge">🏰 Классика</span>
+        <div class="tour-name">Прага и Вена — Европа в сказке</div>
+        <div class="tour-dest">📍 Чехия + Австрия · 8 дней</div>
+        <div class="tour-hotel">🏨 Hilton Prague 5★ + Hotel Imperial Vienna 5★</div>
+        <div class="tour-dates">📅 4–12 октября 2026<br>📅 18–26 октября 2026</div>
+        <div class="tour-price">от 110 000 ₽ <small>/ чел.</small></div>
+        <div class="tour-btns">
+          <a class="btn-book" href="https://travelata.ru/tours/czech/" target="_blank" rel="noopener">🏖 Забронировать на Travelata</a>
+          <a class="btn-alt" href="https://level.travel/search/MOW-PRG/2026-10-04/8nights/2adults" target="_blank" rel="noopener">🏨 Level.Travel</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section" id="why" style="background: #fff; max-width: 100%; padding: 64px 0;">
+  <div style="max-width: 1140px; margin: 0 auto; padding: 0 24px;">
+    <h2 class="section-title">Почему Travel Badya</h2>
+    <p class="section-sub">Мы не продаём туры сами — мы направляем вас к проверенным платформам с лучшими ценами.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🔍</div>
+        <div class="why-title">Честные цены</div>
+        <div class="why-text">Бронирование напрямую через Travelata и Level.Travel — без скрытых наценок агентств.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤖</div>
+        <div class="why-title">AI-помощник 24/7</div>
+        <div class="why-text">Telegram-бот на базе Claude AI подберёт маршрут под ваш бюджет и предпочтения.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔥</div>
+        <div class="why-title">Горящие предложения</div>
+        <div class="why-text">Ежедневная рассылка в канале @cheapflights_travel_ai — лучшие цены прямо в телефоне.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">✈️</div>
+        <div class="why-title">Все направления</div>
+        <div class="why-text">Европа, Азия, ОАЭ, острова — 100+ стран через Aviasales и Jetradar с реальными ценами.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS SEO -->
+<section class="section" style="background:#fff; max-width:100%; padding:64px 0;">
+  <div style="max-width:1140px; margin:0 auto; padding:0 24px;">
+    <h2 class="section-title">Популярные направления 2026</h2>
+    <p class="section-sub">Куда поехать этим летом и осенью — цены, сроки, советы</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:28px;">
+
+      <article style="background:var(--light); border-radius:14px; padding:24px; border:1px solid var(--border);">
+        <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:10px;">✈️ Дешёвые авиабилеты в Турцию 2026</h3>
+        <p style="font-size:.875rem; color:var(--gray); line-height:1.7;">Стамбул остаётся одним из самых доступных направлений из России. Прямые рейсы из Москвы — от 8 000 ₽ в обе стороны. Лучшие цены в мае, сентябре и октябре. Тур «всё включено» на неделю — от 65 000 ₽ с перелётом и отелем 5★.</p>
+        <a href="https://travelata.ru/tours/turkey/" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; font-size:.85rem; font-weight:600; color:var(--primary);">Туры в Турцию →</a>
+      </article>
+
+      <article style="background:var(--light); border-radius:14px; padding:24px; border:1px solid var(--border);">
+        <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:10px;">🏖 Туры на Мальдивы — сколько стоит рай</h3>
+        <p style="font-size:.875rem; color:var(--gray); line-height:1.7;">Мальдивы не так дороги, как кажется. Туры с бунгало на воде, перелётом и полным пансионом — от 245 000 ₽. Лучший период — сентябрь–ноябрь. Вода +29°С, видимость для снорклинга до 30 м, туристов меньше чем зимой.</p>
+        <a href="https://travelata.ru/tours/maldive/" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; font-size:.85rem; font-weight:600; color:var(--primary);">Туры на Мальдивы →</a>
+      </article>
+
+      <article style="background:var(--light); border-radius:14px; padding:24px; border:1px solid var(--border);">
+        <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:10px;">🏛 Тур в Италию — Рим, Флоренция, Венеция</h3>
+        <p style="font-size:.875rem; color:var(--gray); line-height:1.7;">Италия — классика европейского туризма. Тур в Рим с экскурсиями и отелем 4★ — от 89 000 ₽. Включены Колизей, Ватикан, Форум. Лучшие месяцы для поездки — август и сентябрь, когда жара спадает, но пляжный сезон ещё открыт.</p>
+        <a href="https://travelata.ru/tours/italy/" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; font-size:.85rem; font-weight:600; color:var(--primary);">Туры в Италию →</a>
+      </article>
+
+      <article style="background:var(--light); border-radius:14px; padding:24px; border:1px solid var(--border);">
+        <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:10px;">🇦🇪 Туры в Дубай — когда ехать и сколько стоит</h3>
+        <p style="font-size:.875rem; color:var(--gray); line-height:1.7;">Дубай лучше всего посещать с октября по апрель — до +28°С и нет изнуряющей жары. Тур 5 дней с отелем Atlantis The Palm 5★, Бурдж-Халифой и сафари — от 95 000 ₽. Виза для россиян — бесплатно при въезде.</p>
+        <a href="https://travelata.ru/tours/uae/" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; font-size:.85rem; font-weight:600; color:var(--primary);">Туры в Дубай →</a>
+      </article>
+
+      <article style="background:var(--light); border-radius:14px; padding:24px; border:1px solid var(--border);">
+        <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:10px;">🗼 Тур в Париж — Эйфелева башня и Лувр</h3>
+        <p style="font-size:.875rem; color:var(--gray); line-height:1.7;">5 дней в Париже с перелётом и завтраками — от 79 000 ₽. Включены Эйфелева башня, Лувр, прогулка по Монмартру. Тур отлично подходит для первого визита в Европу. Чаще всего бронируют в сентябре — школьники вернулись, ажиотаж спал.</p>
+        <a href="https://travelata.ru/tours/france/" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; font-size:.85rem; font-weight:600; color:var(--primary);">Туры во Францию →</a>
+      </article>
+
+      <article style="background:var(--light); border-radius:14px; padding:24px; border:1px solid var(--border);">
+        <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:10px;">🗾 Тур в Японию — Токио и Киото</h3>
+        <p style="font-size:.875rem; color:var(--gray); line-height:1.7;">Япония открылась для туристов без ограничений. Тур 10 дней с JR Pass и отелем 4★ — от 159 000 ₽. Октябрь — лучшее время: нет тайфунов, начинается сезон осенних листьев момидзи. Визу можно оформить за 2–3 дня через консульство.</p>
+        <a href="https://travelata.ru/tours/japan/" target="_blank" rel="noopener" style="display:inline-block; margin-top:14px; font-size:.85rem; font-weight:600; color:var(--primary);">Туры в Японию →</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <h2 class="section-title">Частые вопросы о бронировании туров</h2>
+  <p class="section-sub">Отвечаем на самые популярные вопросы о покупке туров и авиабилетов</p>
+  <div style="display:flex; flex-direction:column; gap:16px; max-width:800px;">
+
+    <details style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:20px 22px;">
+      <summary style="font-weight:700; cursor:pointer; font-size:.98rem; list-style:none;">
+        💡 Как купить дешёвые авиабилеты и туры в 2026 году?
+      </summary>
+      <p style="margin-top:14px; font-size:.875rem; color:var(--gray); line-height:1.8;">
+        Главные правила экономии: <b>бронируйте за 1–3 месяца</b> до вылета для обычных направлений или следите за <b>горящими турами</b> за 2–4 недели. Используйте <b>гибкие даты вылета</b> — разница в 1–2 дня может сэкономить 15–30%. Подписывайтесь на наш Telegram-канал <a href="https://t.me/cheapflights_travel_ai" style="color:var(--primary);">@cheapflights_travel_ai</a> — публикуем горящие цены каждый день.
+      </p>
+    </details>
+
+    <details style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:20px 22px;">
+      <summary style="font-weight:700; cursor:pointer; font-size:.98rem; list-style:none;">
+        🔒 Безопасно ли бронировать туры онлайн через Travelata и Level.Travel?
+      </summary>
+      <p style="margin-top:14px; font-size:.875rem; color:var(--gray); line-height:1.8;">
+        Да. <b>Travelata.ru</b> и <b>Level.Travel</b> — крупнейшие российские платформы онлайн-бронирования туров, работающие с 2009 года. Оплата — через защищённый шлюз, договор с туроператором заключается онлайн. Оба сервиса имеют лицензию и входят в реестр туроператоров Ростуризма.
+      </p>
+    </details>
+
+    <details style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:20px 22px;">
+      <summary style="font-weight:700; cursor:pointer; font-size:.98rem; list-style:none;">
+        📅 Когда лучше всего бронировать тур на лето 2026?
+      </summary>
+      <p style="margin-top:14px; font-size:.875rem; color:var(--gray); line-height:1.8;">
+        Популярные направления (Турция, Испания, Греция) лучше бронировать <b>уже сейчас</b> — цены на июль–август растут каждую неделю. Если хотите Европу в сентябре–октябре, оптимально бронировать в июне–июле. За горящими предложениями следите в нашем <a href="https://t.me/cheapflights_travel_ai" style="color:var(--primary);">Telegram-канале</a>.
+      </p>
+    </details>
+
+    <details style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:20px 22px;">
+      <summary style="font-weight:700; cursor:pointer; font-size:.98rem; list-style:none;">
+        💳 Можно ли оформить тур в рассрочку или с частичной оплатой?
+      </summary>
+      <p style="margin-top:14px; font-size:.875rem; color:var(--gray); line-height:1.8;">
+        Да. На Travelata доступна <b>рассрочка 0%</b> через Т-Банк и Сбер на срок до 12 месяцев. Level.Travel предлагает оплату частями — вносите аванс 30%, остаток — за 30 дней до вылета. Уточняйте условия при бронировании конкретного тура.
+      </p>
+    </details>
+
+    <details style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:20px 22px;">
+      <summary style="font-weight:700; cursor:pointer; font-size:.98rem; list-style:none;">
+        🤖 Как работает AI-помощник в Telegram-боте?
+      </summary>
+      <p style="margin-top:14px; font-size:.875rem; color:var(--gray); line-height:1.8;">
+        Наш бот <a href="https://t.me/travel_Badya_Bot" style="color:var(--primary);">@travel_Badya_Bot</a> работает на базе Claude AI. Просто напишите ему: <i>«Хочу в Европу в октябре, бюджет 100 000 ₽»</i> — и получите готовый маршрут с ценами, отелями и датами вылета. Бот помнит ваши предпочтения и даёт персональные рекомендации.
+      </p>
+    </details>
+
+    <details style="background:#fff; border:1px solid var(--border); border-radius:12px; padding:20px 22px;">
+      <summary style="font-weight:700; cursor:pointer; font-size:.98rem; list-style:none;">
+        🌍 Нужна ли виза для популярных направлений?
+      </summary>
+      <p style="margin-top:14px; font-size:.875rem; color:var(--gray); line-height:1.8;">
+        <b>Без визы</b> для россиян: Турция, ОАЭ (Дубай), Мальдивы, Сербия, Армения, Грузия.<br/>
+        <b>Виза нужна</b>: Франция, Испания, Италия, Чехия, Австрия (Шенген) — оформляется в консульстве или через визовый центр, срок 7–14 дней. Япония — виза бесплатная, оформляется за 2–3 рабочих дня.
+      </p>
+    </details>
+
+  </div>
+</section>
+
+<!-- TIPS SEO -->
+<section class="section" style="background:#fff; max-width:100%; padding:64px 0;">
+  <div style="max-width:1140px; margin:0 auto; padding:0 24px;">
+    <h2 class="section-title">Советы по покупке авиабилетов</h2>
+    <p class="section-sub">Проверенные способы сэкономить на перелётах до 40%</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px;">
+      <div style="background:var(--light); border-radius:12px; padding:20px; border:1px solid var(--border);">
+        <div style="font-size:1.5rem; margin-bottom:10px;">🗓</div>
+        <b style="display:block; margin-bottom:6px;">Лучшие дни для покупки</b>
+        <p style="font-size:.85rem; color:var(--gray); line-height:1.7;">Вторник и среда — самые дешёвые дни для покупки билетов. Авиакомпании часто запускают акции в начале недели. Избегайте поиска в пятницу вечером — алгоритмы фиксируют пиковый спрос.</p>
+      </div>
+      <div style="background:var(--light); border-radius:12px; padding:20px; border:1px solid var(--border);">
+        <div style="font-size:1.5rem; margin-bottom:10px;">🔄</div>
+        <b style="display:block; margin-bottom:6px;">Стыковочные рейсы дешевле</b>
+        <p style="font-size:.85rem; color:var(--gray); line-height:1.7;">Перелёт с 1–2 пересадками часто дешевле прямого на 20–40%. Оптимальные пересадочные хабы: Стамбул (Turkish Airlines), Дубай (Emirates), Доха (Qatar Airways).</p>
+      </div>
+      <div style="background:var(--light); border-radius:12px; padding:20px; border:1px solid var(--border);">
+        <div style="font-size:1.5rem; margin-bottom:10px;">📱</div>
+        <b style="display:block; margin-bottom:6px;">Горящие туры в Telegram</b>
+        <p style="font-size:.85rem; color:var(--gray); line-height:1.7;">Подпишитесь на канал <a href="https://t.me/cheapflights_travel_ai" style="color:var(--primary);">@cheapflights_travel_ai</a> — ежедневно публикуем горящие билеты из Москвы, Питера, Екатеринбурга с реальными ценами Aviasales.</p>
+      </div>
+      <div style="background:var(--light); border-radius:12px; padding:20px; border:1px solid var(--border);">
+        <div style="font-size:1.5rem; margin-bottom:10px;">🧳</div>
+        <b style="display:block; margin-bottom:6px;">Тур vs билет + отель отдельно</b>
+        <p style="font-size:.85rem; color:var(--gray); line-height:1.7;">Пакетный тур часто дешевле, чем покупать билет и отель по отдельности — туроператоры выкупают блоки мест по оптовым ценам. Особенно выгодно для горящих предложений.</p>
+      </div>
+      <div style="background:var(--light); border-radius:12px; padding:20px; border:1px solid var(--border);">
+        <div style="font-size:1.5rem; margin-bottom:10px;">⏰</div>
+        <b style="display:block; margin-bottom:6px;">За сколько бронировать</b>
+        <p style="font-size:.85rem; color:var(--gray); line-height:1.7;">Европа и Азия — за 2–3 месяца. Турция, Египет — за 3–6 недель или горящие за 7–14 дней. Мальдивы и Япония — за 3–4 месяца, мест мало, цены растут быстро.</p>
+      </div>
+      <div style="background:var(--light); border-radius:12px; padding:20px; border:1px solid var(--border);">
+        <div style="font-size:1.5rem; margin-bottom:10px;">💬</div>
+        <b style="display:block; margin-bottom:6px;">Спросите AI-агента</b>
+        <p style="font-size:.85rem; color:var(--gray); line-height:1.7;">Не знаете куда поехать? Напишите в <a href="https://t.me/travel_Badya_Bot" style="color:var(--primary);">@travel_Badya_Bot</a> свой бюджет и пожелания — AI подберёт оптимальный маршрут за 30 секунд, 24/7.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Не нашли свой тур?</h2>
+  <p>Наш AI-агент подберёт маршрут под любой бюджет и направление — просто напишите в бот.</p>
+  <a href="https://t.me/travel_Badya_Bot" class="btn-white">💬 Открыть бот в Telegram</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Travel Badya — подбор туров и горящих путёвок</p>
+  <p>
+    <a href="https://t.me/travel_Badya_Bot">Telegram-бот</a> ·
+    <a href="https://t.me/cheapflights_travel_ai">Канал с горящими ценами</a>
+  </p>
+  <p style="margin-top: 12px; font-size:.78rem; opacity:.6;">
+    Бронирование осуществляется через партнёрские платформы Travelata.ru и Level.Travel. Цены актуальны на момент публикации и могут меняться.
+  </p>
+</footer>
+
+</body>
+</html>

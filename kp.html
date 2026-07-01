@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Коммерческое предложение — Travel Badya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --primary: #0066FF;
+    --primary-dark: #0050CC;
+    --accent: #FF6B35;
+    --dark: #0F1623;
+    --gray: #6B7280;
+    --light: #F8FAFC;
+    --card-bg: #FFFFFF;
+    --border: #E5E7EB;
+    --gold: #C9A45C;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #EEF1F6;
+    color: var(--dark);
+    line-height: 1.6;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    box-shadow: 0 10px 50px rgba(15,22,35,.12);
+    overflow: hidden;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background:
+      linear-gradient(135deg, rgba(15,22,35,.88) 0%, rgba(0,64,168,.82) 100%),
+      url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1600&q=80') center/cover no-repeat;
+    color: #fff;
+    padding: 56px 56px 64px;
+  }
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 90px;
+  }
+  .logo { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.5px; }
+  .logo span { color: #60A5FA; }
+  .cover-date { font-size: .85rem; color: #CBD5E1; }
+  .cover-badge {
+    display: inline-block;
+    background: var(--accent);
+    font-size: .78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4.5vw, 2.9rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 18px;
+    max-width: 620px;
+  }
+  .cover p {
+    font-size: 1.05rem;
+    color: #E2E8F0;
+    max-width: 560px;
+  }
+
+  /* ── SECTION ── */
+  .section { padding: 48px 56px; border-bottom: 1px solid var(--border); }
+  .section:last-of-type { border-bottom: none; }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--dark);
+  }
+  .section-num {
+    display: inline-block;
+    color: var(--primary);
+    font-weight: 800;
+    margin-right: 8px;
+  }
+  .section-sub { color: var(--gray); margin-bottom: 28px; font-size: .95rem; }
+
+  /* ── ABOUT ── */
+  .about-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 8px; }
+  .about-stat { text-align: center; padding: 18px 8px; background: var(--light); border-radius: 12px; }
+  .about-stat-num { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+  .about-stat-label { font-size: .78rem; color: var(--gray); margin-top: 4px; }
+
+  /* ── WHY ── */
+  .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .why-card { background: var(--light); border-radius: 12px; padding: 20px 22px; border: 1px solid var(--border); }
+  .why-icon { font-size: 1.5rem; margin-bottom: 8px; }
+  .why-title { font-weight: 700; margin-bottom: 4px; font-size: .95rem; }
+  .why-text { font-size: .85rem; color: var(--gray); }
+
+  /* ── TOURS TABLE ── */
+  .tours-list { display: flex; flex-direction: column; gap: 14px; }
+  .tour-row {
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: 18px;
+    align-items: center;
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 18px;
+  }
+  .tour-row img { width: 90px; height: 68px; object-fit: cover; border-radius: 8px; }
+  .tour-name { font-weight: 700; font-size: .98rem; }
+  .tour-dest { font-size: .8rem; color: var(--gray); margin-top: 2px; }
+  .tour-hotel { font-size: .8rem; color: #374151; margin-top: 4px; }
+  .tour-dates { font-size: .75rem; color: var(--gray); margin-top: 4px; }
+  .tour-price { text-align: right; font-size: 1.2rem; font-weight: 800; color: var(--primary); white-space: nowrap; }
+  .tour-price small { display: block; font-size: .7rem; font-weight: 500; color: var(--gray); }
+
+  /* ── HOW ── */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .step { text-align: center; }
+  .step-num {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800;
+    margin: 0 auto 12px;
+  }
+  .step-title { font-weight: 700; margin-bottom: 4px; font-size: .95rem; }
+  .step-text { font-size: .82rem; color: var(--gray); }
+
+  /* ── CONTACT ── */
+  .contact {
+    background: linear-gradient(135deg, var(--dark) 0%, #1a2436 100%);
+    color: #fff;
+    padding: 56px;
+    text-align: center;
+  }
+  .contact h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  .contact p { color: #CBD5E1; margin-bottom: 32px; font-size: .95rem; }
+  .contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .contact-item {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 12px;
+    padding: 18px 26px;
+    min-width: 200px;
+  }
+  .contact-item .label { font-size: .75rem; color: #94A3B8; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
+  .contact-item a, .contact-item .value { color: #fff; font-weight: 700; font-size: 1.05rem; text-decoration: none; }
+  .contact-item a:hover { color: #60A5FA; }
+
+  footer {
+    background: var(--dark);
+    color: #64748B;
+    text-align: center;
+    padding: 20px 24px;
+    font-size: .75rem;
+  }
+
+  @media (max-width: 640px) {
+    .page { margin: 0; }
+    .section, .cover, .contact { padding: 32px 24px; }
+    .about-grid, .why-grid, .steps { grid-template-columns: 1fr 1fr; }
+    .tour-row { grid-template-columns: 70px 1fr; }
+    .tour-price { grid-column: 1 / -1; text-align: left; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { box-shadow: none; margin: 0; max-width: 100%; }
+    .tour-row { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- COVER -->
+  <section class="cover">
+    <div class="cover-top">
+      <div class="logo">✈ Travel <span>Badya</span></div>
+      <div class="cover-date">01 июля 2026</div>
+    </div>
+    <span class="cover-badge">🔥 Горящие туры 2026</span>
+    <h1>Коммерческое предложение<br>по подбору и бронированию туров</h1>
+    <p>Путешествуй больше, плати меньше. Авиа + отель + трансфер — всё включено. Честные цены без скрытых наценок и AI-помощник на связи 24/7.</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section">
+    <h2 class="section-title"><span class="section-num">01</span>О компании</h2>
+    <p class="section-sub">Travel Badya — сервис подбора горящих туров. Мы не продаём туры сами, а направляем клиентов к проверенным платформам бронирования с лучшими ценами и сопровождаем на каждом этапе.</p>
+    <div class="about-grid">
+      <div class="about-stat"><div class="about-stat-num">8</div><div class="about-stat-label">направлений</div></div>
+      <div class="about-stat"><div class="about-stat-num">от 65K ₽</div><div class="about-stat-label">стоимость тура</div></div>
+      <div class="about-stat"><div class="about-stat-num">5–10 дней</div><div class="about-stat-label">длительность</div></div>
+      <div class="about-stat"><div class="about-stat-num">180 дней</div><div class="about-stat-label">гарантия цены</div></div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="section">
+    <h2 class="section-title"><span class="section-num">02</span>Наши преимущества</h2>
+    <p class="section-sub">Почему клиенты выбирают Travel Badya</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🔍</div>
+        <div class="why-title">Честные цены</div>
+        <div class="why-text">Бронирование напрямую через Travelata и Level.Travel — без скрытых наценок агентств.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤖</div>
+        <div class="why-title">AI-помощник 24/7</div>
+        <div class="why-text">Telegram-бот на базе Claude AI подберёт маршрут под ваш бюджет и предпочтения.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔥</div>
+        <div class="why-title">Горящие предложения</div>
+        <div class="why-text">Ежедневная рассылка в канале @cheapflights_travel_ai — лучшие цены прямо в телефоне.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">✈️</div>
+        <div class="why-title">Все направления</div>
+        <div class="why-text">Европа, Азия, ОАЭ, острова — 100+ стран через Aviasales и Jetradar с реальными ценами.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOURS -->
+  <section class="section">
+    <h2 class="section-title"><span class="section-num">03</span>Актуальные предложения</h2>
+    <p class="section-sub">Цены указаны на человека при двухместном размещении, вылет из Москвы</p>
+    <div class="tours-list">
+
+      <div class="tour-row">
+        <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=200&q=80" alt="Стамбул" />
+        <div>
+          <div class="tour-name">🕌 Стамбул — мост двух миров</div>
+          <div class="tour-dest">Турция, Стамбул · 6 дней · Movenpick Hotel Istanbul 5★</div>
+          <div class="tour-dates">8–14 августа · 22–28 августа 2026</div>
+        </div>
+        <div class="tour-price">от 65 000 ₽<small>/ чел.</small></div>
+      </div>
+
+      <div class="tour-row">
+        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=200&q=80" alt="Париж" />
+        <div>
+          <div class="tour-name">🗼 Парижские каникулы</div>
+          <div class="tour-dest">Франция, Париж · 5 дней · Mercure Paris Centre Tour Eiffel 4★</div>
+          <div class="tour-dates">5–10 сентября · 19–24 сентября 2026</div>
+        </div>
+        <div class="tour-price">от 79 000 ₽<small>/ чел.</small></div>
+      </div>
+
+      <div class="tour-row">
+        <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=200&q=80" alt="Рим" />
+        <div>
+          <div class="tour-name">🏛️ Вечный Рим и Ватикан</div>
+          <div class="tour-dest">Италия, Рим · 7 дней · Hotel Artemide 4★</div>
+          <div class="tour-dates">10–17 августа · 24–31 августа 2026</div>
+        </div>
+        <div class="tour-price">от 89 000 ₽<small>/ чел.</small></div>
+      </div>
+
+      <div class="tour-row">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=200&q=80" alt="Дубай" />
+        <div>
+          <div class="tour-name">🏙️ Дубай — город мечты</div>
+          <div class="tour-dest">ОАЭ, Дубай · 5 дней · Atlantis The Palm 5★</div>
+          <div class="tour-dates">12–17 августа · 26–31 августа 2026</div>
+        </div>
+        <div class="tour-price">от 95 000 ₽<small>/ чел.</small></div>
+      </div>
+
+      <div class="tour-row">
+        <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=200&q=80" alt="Барселона" />
+        <div>
+          <div class="tour-name">🏖️ Барселона и Коста-Брава</div>
+          <div class="tour-dest">Испания, Барселона · 8 дней · Hotel Arts Barcelona 5★</div>
+          <div class="tour-dates">3–11 июля · 17–25 июля 2026</div>
+        </div>
+        <div class="tour-price">от 99 000 ₽<small>/ чел.</small></div>
+      </div>
+
+      <div class="tour-row">
+        <img src="https://images.unsplash.com/photo-1541849546-216549ae216d?w=200&q=80" alt="Прага и Вена" />
+        <div>
+          <div class="tour-name">🏰 Прага и Вена — Европа в сказке</div>
+          <div class="tour-dest">Чехия + Австрия · 8 дней · Hilton Prague 5★ + Hotel Imperial Vienna 5★</div>
+          <div class="tour-dates">4–12 октября · 18–26 октября 2026</div>
+        </div>
+        <div class="tour-price">от 110 000 ₽<small>/ чел.</small></div>
+      </div>
+
+      <div class="tour-row">
+        <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=200&q=80" alt="Токио" />
+        <div>
+          <div class="tour-name">🗾 Токио — город будущего</div>
+          <div class="tour-dest">Япония, Токио + Киото · 10 дней · Shinjuku Granbell Hotel 4★</div>
+          <div class="tour-dates">2–12 октября · 16–26 октября 2026</div>
+        </div>
+        <div class="tour-price">от 159 000 ₽<small>/ чел.</small></div>
+      </div>
+
+      <div class="tour-row">
+        <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=200&q=80" alt="Мальдивы" />
+        <div>
+          <div class="tour-name">🏝️ Мальдивы — рай на земле</div>
+          <div class="tour-dest">Мальдивы · 7 дней · Sun Island Resort & Spa 5★</div>
+          <div class="tour-dates">1–8 сентября · 15–22 сентября 2026</div>
+        </div>
+        <div class="tour-price">от 245 000 ₽<small>/ чел.</small></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section class="section">
+    <h2 class="section-title"><span class="section-num">04</span>Как это работает</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">Заявка</div>
+        <div class="step-text">Пишете в Telegram-бот или звоните — рассказываете бюджет и пожелания.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">Подбор</div>
+        <div class="step-text">AI-агент и менеджер подбирают лучшие варианты по цене и датам.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">Бронирование</div>
+        <div class="step-text">Оформляете тур напрямую через Travelata или Level.Travel без переплат.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <h2>Готовы обсудить детали?</h2>
+    <p>Свяжитесь со мной удобным способом — подберём тур или обсудим сотрудничество</p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="label">Телефон</div>
+        <a href="tel:+79175817777">+7 917 581-77-77</a>
+      </div>
+      <div class="contact-item">
+        <div class="label">Telegram-бот</div>
+        <a href="https://t.me/travel_Badya_Bot">@travel_Badya_Bot</a>
+      </div>
+      <div class="contact-item">
+        <div class="label">Канал с ценами</div>
+        <a href="https://t.me/cheapflights_travel_ai">@cheapflights_travel_ai</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Travel Badya — подбор туров и горящих путёвок. Бронирование осуществляется через партнёрские платформы Travelata.ru и Level.Travel. Цены актуальны на момент публикации и могут меняться.
+  </footer>
+
+</div>
+</body>
+</html>
