@@ -739,5 +739,17 @@
   </p>
 </footer>
 
+<script>
+  document.querySelectorAll('a[target="_blank"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var url = this.getAttribute('href');
+      var w = window.open(url, '_blank');
+      if (!w || w.closed || typeof w.closed === 'undefined') {
+        window.location.href = url;
+      }
+    });
+  });
+</script>
 </body>
 </html>
