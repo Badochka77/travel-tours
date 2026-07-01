@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Стратегия Travel Badya — Анализ и план монетизации</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--primary:#0066FF;--accent:#FF6B35;--dark:#0F1623;--gray:#6B7280;--light:#F8FAFC;--border:#E5E7EB;--green:#10B981;--yellow:#F59E0B;--red:#EF4444}
+body{font-family:'Inter',sans-serif;background:#EEF1F6;color:var(--dark);line-height:1.6}
+.page{max-width:960px;margin:32px auto;background:#fff;box-shadow:0 8px 40px rgba(15,22,35,.1);overflow:hidden}
+/* COVER */
+.cover{background:linear-gradient(135deg,rgba(15,22,35,.9) 0%,rgba(0,64,168,.85) 100%),url('https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1600&q=80') center/cover no-repeat;color:#fff;padding:52px 52px 60px}
+.cover-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:80px}
+.logo{font-size:1.25rem;font-weight:800}.logo span{color:#60A5FA}
+.cover-meta{font-size:.82rem;color:#94A3B8;text-align:right}
+.cover-badge{display:inline-block;background:var(--accent);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:4px 14px;border-radius:20px;margin-bottom:18px}
+.cover h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;line-height:1.25;margin-bottom:14px;max-width:580px}
+.cover p{color:#CBD5E1;max-width:540px;font-size:1rem}
+/* NAV */
+.toc{background:var(--light);border-bottom:1px solid var(--border);padding:24px 52px;display:flex;gap:20px;flex-wrap:wrap}
+.toc a{font-size:.82rem;font-weight:600;color:var(--primary);text-decoration:none;padding:5px 12px;background:#EFF6FF;border-radius:20px;transition:background .2s}
+.toc a:hover{background:#DBEAFE}
+/* SECTION */
+.section{padding:44px 52px;border-bottom:1px solid var(--border)}
+.section:last-of-type{border-bottom:none}
+.s-num{color:var(--primary);font-weight:800;font-size:1rem;margin-bottom:4px}
+.s-title{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:700;margin-bottom:6px}
+.s-sub{color:var(--gray);font-size:.9rem;margin-bottom:28px}
+/* SCORE CARD */
+.scores{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px}
+.score-card{background:var(--light);border-radius:12px;padding:18px 20px;border-left:4px solid}
+.score-card.green{border-color:var(--green)}
+.score-card.yellow{border-color:var(--yellow)}
+.score-card.red{border-color:var(--red)}
+.score-num{font-size:2rem;font-weight:800;margin-bottom:4px}
+.score-card.green .score-num{color:var(--green)}
+.score-card.yellow .score-num{color:var(--yellow)}
+.score-card.red .score-num{color:var(--red)}
+.score-label{font-size:.8rem;color:var(--gray);font-weight:500}
+/* ISSUES */
+.issues{display:flex;flex-direction:column;gap:14px}
+.issue{background:var(--light);border-radius:12px;padding:18px 20px;border-left:4px solid var(--red);display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}
+.issue.yellow{border-color:var(--yellow)}
+.issue.green{border-color:var(--green)}
+.issue-title{font-weight:700;font-size:.95rem;margin-bottom:4px}
+.issue-text{font-size:.85rem;color:var(--gray);line-height:1.7}
+.issue-fix{background:#EFF6FF;color:var(--primary);font-size:.78rem;font-weight:700;padding:4px 12px;border-radius:20px;white-space:nowrap;height:fit-content}
+/* COMPETITORS */
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.comp-card{background:var(--light);border-radius:12px;padding:20px;border:1px solid var(--border)}
+.comp-name{font-weight:700;margin-bottom:8px;font-size:.95rem}
+.comp-badge{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 10px;border-radius:20px;margin-bottom:10px}
+.comp-badge.threat{background:#FEE2E2;color:#DC2626}
+.comp-badge.medium{background:#FEF3C7;color:#92400E}
+.comp-badge.weak{background:#D1FAE5;color:#065F46}
+.comp-meta{font-size:.82rem;color:var(--gray);line-height:1.8}
+/* OPPORTUNITIES */
+.opp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.opp-card{background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:12px;padding:20px;border:1px solid #BFDBFE}
+.opp-icon{font-size:1.6rem;margin-bottom:8px}
+.opp-title{font-weight:700;margin-bottom:6px;font-size:.95rem}
+.opp-text{font-size:.83rem;color:#1E40AF;line-height:1.7}
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:grid;grid-template-columns:140px 1fr;gap:20px;padding:20px 0;border-bottom:1px dashed var(--border)}
+.tl-item:last-child{border-bottom:none}
+.tl-month{font-weight:800;font-size:1rem;color:var(--primary)}
+.tl-income{font-size:.85rem;font-weight:700;color:var(--green);margin-bottom:8px}
+.tl-tasks{list-style:none;display:flex;flex-direction:column;gap:5px}
+.tl-tasks li{font-size:.83rem;color:var(--gray);padding-left:16px;position:relative}
+.tl-tasks li::before{content:"→";position:absolute;left:0;color:var(--primary);font-weight:700}
+/* INCOME TABLE */
+table{width:100%;border-collapse:collapse;margin:20px 0}
+th{background:var(--dark);color:#fff;padding:10px 14px;font-size:.82rem;font-weight:600;text-align:left}
+td{padding:10px 14px;font-size:.83rem;border-bottom:1px solid var(--border)}
+tr:nth-child(even) td{background:var(--light)}
+td:last-child{font-weight:700;color:var(--green)}
+/* TOP5 */
+.top5{display:flex;flex-direction:column;gap:14px}
+.top5-item{display:grid;grid-template-columns:48px 1fr auto;gap:14px;align-items:center;background:var(--light);border-radius:12px;padding:16px 20px;border:1px solid var(--border)}
+.top5-num{width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center}
+.top5-title{font-weight:700;font-size:.95rem;margin-bottom:3px}
+.top5-desc{font-size:.82rem;color:var(--gray)}
+.top5-badge{background:#ECFDF5;color:var(--green);font-size:.78rem;font-weight:700;padding:4px 12px;border-radius:20px;white-space:nowrap}
+/* ACTIONS */
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.action-card{background:var(--light);border-radius:12px;padding:18px 20px;border:1px solid var(--border)}
+.action-day{font-size:.75rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.action-title{font-weight:700;margin-bottom:6px;font-size:.92rem}
+.action-text{font-size:.82rem;color:var(--gray);line-height:1.7}
+/* CONTACT */
+.contact-block{background:linear-gradient(135deg,var(--dark),#1a2436);color:#fff;padding:52px;text-align:center}
+.contact-block h2{font-family:'Playfair Display',serif;font-size:1.7rem;margin-bottom:10px}
+.contact-block p{color:#CBD5E1;margin-bottom:28px}
+.contact-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.contact-link{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:600;font-size:.9rem;transition:background .2s}
+.contact-link:hover{background:rgba(255,255,255,.2)}
+footer{background:var(--dark);color:#64748B;text-align:center;padding:18px;font-size:.75rem}
+@media(max-width:640px){
+  .page{margin:0}
+  .section,.cover,.contact-block{padding:28px 20px}
+  .toc{padding:16px 20px}
+  .scores,.comp-grid,.opp-grid,.actions{grid-template-columns:1fr}
+  .tl-item{grid-template-columns:1fr}
+  .top5-item{grid-template-columns:40px 1fr}
+  .top5-badge{display:none}
+}
+@media print{
+  body{background:#fff}.page{box-shadow:none;margin:0;max-width:100%}
+  .tl-item,.top5-item,.issue{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- COVER -->
+<section class="cover">
+  <div class="cover-top">
+    <div class="logo">✈ Travel <span>Badya</span></div>
+    <div class="cover-meta">Стратегический отчёт<br>Июль 2026</div>
+  </div>
+  <span class="cover-badge">🤖 AI-анализ · 3 агента</span>
+  <h1>Анализ сайта, конкурентов<br>и стратегия монетизации</h1>
+  <p>Полный разбор лендинга, рынка и конкурентов. Конкретный план: что исправить и как заработать первые 100K ₽ за 90 дней.</p>
+</section>
+
+<!-- TOC -->
+<nav class="toc">
+  <a href="#ux">UX и визуал</a>
+  <a href="#competitors">Конкуренты</a>
+  <a href="#monetization">Монетизация</a>
+  <a href="#top5">ТОП-5 правок</a>
+  <a href="#plan">План на 6 месяцев</a>
+  <a href="#actions">7 действий сегодня</a>
+</nav>
+
+<!-- SECTION 1: UX -->
+<section class="section" id="ux">
+  <div class="s-num">01</div>
+  <h2 class="s-title">Анализ сайта: UX, визуал, конверсия</h2>
+  <p class="s-sub">Текущая конверсия ~1.5–2.5% · После правок прогноз 3.5–5.5%</p>
+
+  <div class="scores">
+    <div class="score-card yellow">
+      <div class="score-num">2.0%</div>
+      <div class="score-label">Текущая конверсия (клик на партнёрку / визит)</div>
+    </div>
+    <div class="score-card green">
+      <div class="score-num">5.0%</div>
+      <div class="score-label">Прогноз после ТОП-5 правок</div>
+    </div>
+    <div class="score-card green">
+      <div class="score-num">+2.5x</div>
+      <div class="score-label">Рост конверсии без увеличения трафика</div>
+    </div>
+  </div>
+
+  <div class="issues">
+
+    <div class="issue red">
+      <div>
+        <div class="issue-title">🔴 Паралич выбора — 2 кнопки на каждой карточке тура</div>
+        <div class="issue-text">На каждой из 8 карточек туров 2 кнопки бронирования (Travelata + Level.Travel) = 16 конкурирующих CTA. Пользователь не знает куда нажать и закрывает страницу.</div>
+      </div>
+      <div class="issue-fix">Критично</div>
+    </div>
+
+    <div class="issue red">
+      <div>
+        <div class="issue-title">🔴 Нет отзывов и социального доказательства</div>
+        <div class="issue-text">Ни одного отзыва реального клиента, ни одного счётчика "X человек купили тур". Без этого доверие к неизвестному агрегатору близко к нулю.</div>
+      </div>
+      <div class="issue-fix">Критично</div>
+    </div>
+
+    <div class="issue red">
+      <div>
+        <div class="issue-title">🔴 Нет срочности на карточках туров</div>
+        <div class="issue-text">"Горящие туры" в заголовке есть, но на самих карточках нет дедлайна, таймера или "осталось X мест". Без срочности пользователь откладывает решение.</div>
+      </div>
+      <div class="issue-fix">Критично</div>
+    </div>
+
+    <div class="issue yellow">
+      <div>
+        <div class="issue-title">🟡 Нет логотипов партнёров (Travelata, Aviasales, Level.Travel)</div>
+        <div class="issue-text">Упоминание известных брендов без их логотипов работает вполовину хуже. Логотипы мгновенно переносят доверие к бренду на ваш сайт.</div>
+      </div>
+      <div class="issue-fix">Важно</div>
+    </div>
+
+    <div class="issue yellow">
+      <div>
+        <div class="issue-title">🟡 Нет sticky CTA кнопки на мобиле</div>
+        <div class="issue-text">На мобиле пользователь скроллит — кнопки пропадают. Фиксированная кнопка внизу экрана ("Найти тур →") увеличивает конверсию мобильного трафика на 15–25%.</div>
+      </div>
+      <div class="issue-fix">Важно</div>
+    </div>
+
+    <div class="issue yellow">
+      <div>
+        <div class="issue-title">🟡 Hero: два конкурирующих CTA одинакового веса</div>
+        <div class="issue-text">"Смотреть туры" и "Подобрать маршрут" — обе кнопки выглядят одинаково важными. Нужна одна главная (оранжевая, крупная) и одна второстепенная (контурная).</div>
+      </div>
+      <div class="issue-fix">Важно</div>
+    </div>
+
+    <div class="issue green">
+      <div>
+        <div class="issue-title">🟢 Хорошая структура страницы и SEO-контент</div>
+        <div class="issue-text">FAQ с Schema.org, статьи о направлениях, советы по билетам — это правильный фундамент. Яндекс будет индексировать и давать трафик через 2–3 месяца.</div>
+      </div>
+      <div class="issue-fix">Сохранить</div>
+    </div>
+
+    <div class="issue green">
+      <div>
+        <div class="issue-title">🟢 Аккордеон FAQ и структурированная разметка</div>
+        <div class="issue-text">6 вопросов в FAQ с разметкой FAQPage = шанс попасть в нулевую позицию Google ("featured snippet"). Это бесплатный трафик без ссылочной массы.</div>
+      </div>
+      <div class="issue-fix">Отлично</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECTION 2: COMPETITORS -->
+<section class="section" id="competitors">
+  <div class="s-num">02</div>
+  <h2 class="s-title">Анализ конкурентов</h2>
+  <p class="s-sub">Прямые конкуренты слабее чем кажется — большинство не обновлялись годами</p>
+
+  <div class="comp-grid">
+
+    <div class="comp-card">
+      <div class="comp-name">📰 Travelask.ru</div>
+      <span class="comp-badge threat">Сильный конкурент</span>
+      <div class="comp-meta">
+        <b>Сила:</b> 100K+ страниц, авторитет домена, SEO-машина<br>
+        <b>Слабость:</b> устаревший дизайн, нет AI, нет Telegram<br>
+        <b>Трафик:</b> SEO по инфо-запросам<br>
+        <b>Вывод:</b> не конкурировать по тем же запросам — брать смежные
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-name">📸 Tourister.ru</div>
+      <span class="comp-badge medium">Средний</span>
+      <div class="comp-meta">
+        <b>Сила:</b> UGC-контент (пользователи пишут сами), много страниц<br>
+        <b>Слабость:</b> нет активного развития, нет партнёрских продаж<br>
+        <b>Трафик:</b> SEO + повторные визиты<br>
+        <b>Вывод:</b> можно обогнать в коммерческих запросах
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-name">✈️ @avia_hot (Telegram)</div>
+      <span class="comp-badge threat">Прямой конкурент</span>
+      <div class="comp-meta">
+        <b>Сила:</b> 80K подписчиков, лидер в нише горящих билетов<br>
+        <b>Слабость:</b> нет AI, нет персонализации, нет бота<br>
+        <b>Трафик:</b> органика + рекламные посты в других каналах<br>
+        <b>Вывод:</b> ваш AI-бот — главное УТП против них
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-name">🌊 @turynamore (Telegram)</div>
+      <span class="comp-badge medium">Средний</span>
+      <div class="comp-meta">
+        <b>Сила:</b> 40K подписчиков, узкая ниша "море"<br>
+        <b>Слабость:</b> ручные публикации, нет автоматизации<br>
+        <b>Трафик:</b> органика Telegram<br>
+        <b>Вывод:</b> можно договориться о кросс-промо
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-name">🗺 Мелкие affiliate-сайты</div>
+      <span class="comp-badge weak">Слабые</span>
+      <div class="comp-meta">
+        <b>Сила:</b> нет никакой<br>
+        <b>Слабость:</b> нет трафика, нет контента, просто виджеты<br>
+        <b>Трафик:</b> случайные переходы<br>
+        <b>Вывод:</b> их легко обогнать даже с одним лендингом
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-name">🤖 AI travel-боты</div>
+      <span class="comp-badge weak">Почти нет</span>
+      <div class="comp-meta">
+        <b>Сила:</b> единицы имеют работающих ботов<br>
+        <b>Слабость:</b> нет монетизации, нет партнёрок<br>
+        <b>Трафик:</b> минимальный<br>
+        <b>Вывод:</b> ниша практически свободна — занимать прямо сейчас
+      </div>
+    </div>
+
+  </div>
+
+  <h3 style="margin:32px 0 16px; font-size:1.05rem; font-weight:700;">Незанятые ниши — ваши возможности</h3>
+  <div class="opp-grid">
+    <div class="opp-card">
+      <div class="opp-icon">🤖</div>
+      <div class="opp-title">AI-персонализация туров</div>
+      <div class="opp-text">Ни один конкурент не предлагает "введи бюджет — получи топ-3 тура через AI". Это ваш ключевой отрыв. Продвигайте бот агрессивно.</div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-icon">⚡</div>
+      <div class="opp-title">Туры "последний момент"</div>
+      <div class="opp-text">Контент "куда улететь завтра дёшево" — высокая конверсия, низкая SEO-конкуренция. Делать отдельные страницы под каждый месяц.</div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-icon">⚖️</div>
+      <div class="opp-title">Сравнение Travelata vs Level.Travel</div>
+      <div class="opp-text">Коммерческий запрос с высоким Intent, почти не закрытый контентом. Страница-сравнение быстро выйдет в топ-10.</div>
+    </div>
+    <div class="opp-card">
+      <div class="opp-icon">👨‍👩‍👧</div>
+      <div class="opp-title">Нишевые аудитории</div>
+      <div class="opp-text">Туры с детьми, для одиночек, для пенсионеров — отдельные лендинги под низкочастотные запросы с высокой конверсией.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: MONETIZATION -->
+<section class="section" id="monetization">
+  <div class="s-num">03</div>
+  <h2 class="s-title">Финансовая модель монетизации</h2>
+  <p class="s-sub">Средний чек тура 110 000 ₽ · Средняя комиссия 3% = 3 300 ₽ с продажи</p>
+
+  <table>
+    <tr>
+      <th>Цель / месяц</th>
+      <th>Продаж нужно</th>
+      <th>Переходов по ссылкам</th>
+      <th>Посетителей сайта / бот</th>
+    </tr>
+    <tr><td>50 000 ₽</td><td>15 продаж</td><td>1 000 переходов</td><td>3 000–5 000</td></tr>
+    <tr><td>100 000 ₽</td><td>30 продаж</td><td>2 000 переходов</td><td>6 000–10 000</td></tr>
+    <tr><td>300 000 ₽</td><td>91 продажа</td><td>6 000 переходов</td><td>18 000–30 000</td></tr>
+  </table>
+
+  <h3 style="margin:28px 0 16px;font-size:1.05rem;font-weight:700;">Дополнительные источники дохода</h3>
+  <table>
+    <tr>
+      <th>Источник</th><th>Комиссия / цена</th><th>Когда подключать</th><th>Потенциал/мес</th>
+    </tr>
+    <tr><td>✅ Travelata (уже есть)</td><td>3.8%, 180 дней куки</td><td>Сейчас</td><td>30 000–120 000 ₽</td></tr>
+    <tr><td>✅ Aviasales (уже есть)</td><td>1.5% от билета</td><td>Сейчас</td><td>5 000–20 000 ₽</td></tr>
+    <tr><td>🔥 Cherehapa (страховки)</td><td>15–25% от 2–8K ₽</td><td>Эта неделя</td><td>10 000–40 000 ₽</td></tr>
+    <tr><td>🔥 Hotellook / Ostrovok</td><td>3–5% от отеля</td><td>Эта неделя</td><td>15 000–50 000 ₽</td></tr>
+    <tr><td>📢 Реклама в канале</td><td>2 000–25 000 ₽/пост</td><td>При 500+ подписчиках</td><td>5 000–50 000 ₽</td></tr>
+    <tr><td>📞 Лиды агентствам</td><td>500–2 000 ₽/лид</td><td>При 100+ лидах/мес</td><td>15 000–40 000 ₽</td></tr>
+    <tr><td>💎 Подписка "Про" в боте</td><td>299–499 ₽/мес</td><td>При 500+ пользователях</td><td>15 000–25 000 ₽</td></tr>
+  </table>
+</section>
+
+<!-- SECTION 4: TOP5 -->
+<section class="section" id="top5">
+  <div class="s-num">04</div>
+  <h2 class="s-title">ТОП-5 правок для максимального роста конверсии</h2>
+  <p class="s-sub">Делать именно в этом порядке — каждая следующая опирается на предыдущую</p>
+
+  <div class="top5">
+    <div class="top5-item">
+      <div class="top5-num">1</div>
+      <div>
+        <div class="top5-title">Убрать вторую кнопку с карточек туров</div>
+        <div class="top5-desc">Оставить одну кнопку "Забронировать" → при клике выбор площадки. Или чередовать: 4 карточки Travelata, 4 — Level.Travel. Паралич выбора — главный убийца конверсии.</div>
+      </div>
+      <div class="top5-badge">−30% отказов</div>
+    </div>
+    <div class="top5-item">
+      <div class="top5-num">2</div>
+      <div>
+        <div class="top5-title">Добавить блок отзывов (3–5 реальных)</div>
+        <div class="top5-desc">Фото + имя + направление + дата поездки. Можно скриншоты из Telegram-бота. Без отзывов партнёрский агрегатор не вызывает доверия.</div>
+      </div>
+      <div class="top5-badge">+20–40% доверия</div>
+    </div>
+    <div class="top5-item">
+      <div class="top5-num">3</div>
+      <div>
+        <div class="top5-title">Логотипы партнёров с подписью "Официальный партнёр"</div>
+        <div class="top5-desc">Travelata + Level.Travel + Aviasales — три известных бренда. Их логотипы моментально переносят доверие к бренду на ваш сайт.</div>
+      </div>
+      <div class="top5-badge">Мгновенный эффект</div>
+    </div>
+    <div class="top5-item">
+      <div class="top5-num">4</div>
+      <div>
+        <div class="top5-title">Sticky CTA кнопка на мобиле (фиксированная снизу)</div>
+        <div class="top5-desc">"Найти тур →" или "Написать в Telegram" — фиксированная кнопка внизу экрана при скролле. Пользователи на мобиле не скроллят обратно вверх.</div>
+      </div>
+      <div class="top5-badge">+15–25% мобиль</div>
+    </div>
+    <div class="top5-item">
+      <div class="top5-num">5</div>
+      <div>
+        <div class="top5-title">Добавить срочность на карточки туров</div>
+        <div class="top5-desc">"Осталось 3 места по этой цене" или "Популярный выбор этой недели". Без дедлайна пользователь откладывает решение — и уходит навсегда.</div>
+      </div>
+      <div class="top5-badge">+10–20% CTR</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: PLAN -->
+<section class="section" id="plan">
+  <div class="s-num">05</div>
+  <h2 class="s-title">Реалистичный план на 6 месяцев</h2>
+  <p class="s-sub">Ноябрь–декабрь — высокий сезон покупки туров. Разгоняться нужно уже сейчас.</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div>
+        <div class="tl-month">Июль 2026</div>
+        <div class="tl-income">5 000–15 000 ₽</div>
+      </div>
+      <ul class="tl-tasks">
+        <li>Подключить Cherehapa (страховки) и Hotellook (отели) — 2 часа работы</li>
+        <li>Поставить UTM-метки на все партнёрские ссылки</li>
+        <li>Разослать ссылку на бот 30 знакомым</li>
+        <li>Разместить 15–20 сообщений в тревел-чатах Telegram</li>
+        <li>Написать пост на Пикабу или VC.ru с историей о боте</li>
+        <li>Цель: 150 подписчиков канала, 80 пользователей бота</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <div>
+        <div class="tl-month">Август 2026</div>
+        <div class="tl-income">20 000–40 000 ₽</div>
+      </div>
+      <ul class="tl-tasks">
+        <li>Написать 4 SEO-статьи под низкочастотные запросы</li>
+        <li>Выйти на ритм 2 поста в день в Telegram</li>
+        <li>Договориться о взаимном пиаре с 3 смежными каналами</li>
+        <li>Зарегистрироваться на Telega.in (биржа рекламы)</li>
+        <li>Цель: 400 подписчиков, 250 пользователей бота</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <div>
+        <div class="tl-month">Сентябрь 2026</div>
+        <div class="tl-income">45 000–75 000 ₽</div>
+      </div>
+      <ul class="tl-tasks">
+        <li>8–10 SEO-статей (накопительный эффект)</li>
+        <li>Первые продажи рекламы в канале (500+ подписчиков)</li>
+        <li>Запустить реферальную программу в боте</li>
+        <li>Настроить пуш-уведомления на сайте (OneSignal)</li>
+        <li>Цель: 900 подписчиков, 600 пользователей бота</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <div>
+        <div class="tl-month">Октябрь 2026</div>
+        <div class="tl-income">75 000–115 000 ₽</div>
+      </div>
+      <ul class="tl-tasks">
+        <li>Первый органический SEO-трафик (60+ дней после публикаций)</li>
+        <li>Тест платной подписки "Про" в боте (299 ₽/мес)</li>
+        <li>Запустить продажу лидов туристическим агентствам</li>
+        <li>VK-таргетинг: 3 000–5 000 ₽ бюджета на тест</li>
+        <li>Цель: 1 800 подписчиков, 1 200 пользователей бота</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <div>
+        <div class="tl-month">Ноябрь 2026</div>
+        <div class="tl-income">108 000–158 000 ₽</div>
+      </div>
+      <ul class="tl-tasks">
+        <li>Высокий сезон — новогодние туры. Публиковать каждый день</li>
+        <li>Нанять контент-менеджера на 10 000–15 000 ₽/мес</li>
+        <li>Запустить YouTube Shorts / VK Клипы с контентом канала</li>
+        <li>Прямые договоры с туроператорами (агентская комиссия 8–12%)</li>
+        <li>Цель: 3 000 подписчиков, 2 000 пользователей бота</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <div>
+        <div class="tl-month">Декабрь 2026</div>
+        <div class="tl-income">155 000–235 000 ₽</div>
+      </div>
+      <ul class="tl-tasks">
+        <li>Пик: новогодние туры + горящие путёвки на январь</li>
+        <li>Собственный групповой тур (маржа 15–30K ₽ с человека)</li>
+        <li>White label бота для других блогеров</li>
+        <li>Цель: 5 000 подписчиков, 3 500 пользователей бота</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: ACTIONS -->
+<section class="section" id="actions">
+  <div class="s-num">06</div>
+  <h2 class="s-title">7 действий на этой неделе</h2>
+  <p class="s-sub">Только то, что даёт реальный результат в первые 7 дней</p>
+
+  <div class="actions">
+    <div class="action-card">
+      <div class="action-day">День 1–2</div>
+      <div class="action-title">🔥 Подключить Cherehapa и Hotellook</div>
+      <div class="action-text">Страховки конвертируют в 3–5 раз лучше туров — каждый путешественник берёт. Регистрация на cherehapa.ru и hotellook.ru как партнёр. Добавить ссылки в бот и на сайт.</div>
+    </div>
+    <div class="action-card">
+      <div class="action-day">День 1</div>
+      <div class="action-title">📊 UTM-метки на все ссылки</div>
+      <div class="action-text">Без UTM вы летите вслепую. Добавить ?utm_source=tg&utm_medium=post&utm_campaign=july к каждой ссылке в канале. В кабинете Aviasales и Travelata появится статистика.</div>
+    </div>
+    <div class="action-card">
+      <div class="action-day">День 2–3</div>
+      <div class="action-title">💬 5 конкретных постов с ценами</div>
+      <div class="action-text">"Турция, вылет 15 июля, 7 ночей — 78 400 ₽. Осталось 3 места → [ссылка]". Конкретика с датами и ценами конвертирует в 5–10 раз лучше общих постов.</div>
+    </div>
+    <div class="action-card">
+      <div class="action-day">День 2</div>
+      <div class="action-title">📱 Разослать боту 30 знакомых</div>
+      <div class="action-text">Личное сообщение: "Запустил AI-бот который находит туры дешевле агентств — попробуй бесплатно, @travel_Badya_Bot". Первые 30–50 реальных пользователей — из личного круга.</div>
+    </div>
+    <div class="action-card">
+      <div class="action-day">День 3–5</div>
+      <div class="action-title">💬 15 комментариев в тревел-чатах</div>
+      <div class="action-text">Найти чаты "Путешественники России", "Горящие туры", "Дешёвые перелёты". Не спам — полезный ответ + упоминание бота. 15 качественных комментариев = 20–80 новых пользователей.</div>
+    </div>
+    <div class="action-card">
+      <div class="action-day">День 4–7</div>
+      <div class="action-title">📝 Написать пост на Пикабу / VC.ru</div>
+      <div class="action-text">Нативная история "Как я сэкономил 40K ₽ на туре благодаря AI-боту". Реальная история + ссылка на бот. Пикабу при попадании в горячее — тысячи переходов бесплатно.</div>
+    </div>
+    <div class="action-card">
+      <div class="action-day">День 5–7</div>
+      <div class="action-title">📈 Зарегистрироваться на Telega.in</div>
+      <div class="action-text">Добавить канал @cheapflights_travel_ai на Telega.in и TGStat. Начать мониторить конкурентов. При 500 подписчиках — первые продажи рекламы по 1 500–3 000 ₽/пост.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-block">
+  <h2>Travel Badya — ваш AI-ассистент</h2>
+  <p>Бот подбирает туры под любой бюджет. Канал публикует горящие цены каждый день.</p>
+  <div class="contact-links">
+    <a class="contact-link" href="https://t.me/travel_Badya_Bot">🤖 @travel_Badya_Bot</a>
+    <a class="contact-link" href="https://t.me/cheapflights_travel_ai">✈️ Канал горящих туров</a>
+    <a class="contact-link" href="index.html">🌐 Лендинг</a>
+    <a class="contact-link" href="kp.html">📋 Коммерческое предложение</a>
+  </div>
+</section>
+
+<footer>© 2026 Travel Badya · Стратегический анализ подготовлен AI-агентами · Июль 2026</footer>
+
+</div>
+</body>
+</html>
