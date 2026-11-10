@@ -1,0 +1,26 @@
+{
+  "_как_заполнить": [
+    "Этот файл ПУБЛИЧНЫЙ (лежит в репозитории GitHub Pages). Токены и пароли сюда НЕ писать.",
+    "marker — числовой ID партнёра Travelpayouts (не API-токен!).",
+    "metrika_id — номер счётчика Яндекс.Метрики (metrika.yandex.ru -> Добавить счётчик -> сайт travelbadya.github.io). Пусто — счётчика нет.",
+    "programs: после одобрения программы в кабинете Travelpayouts -> Инструменты -> Ссылка на сайт,",
+    "  из ссылки https://cNN.travelpayouts.com/click?shmarker=745408&promo_id=NNN взять host и promo_id.",
+    "  Пока host или promo_id пустые — блок программы на сайте НЕ показывается (ссылка без комиссии не нужна).",
+    "Пересобрать: python build_site.py   (проверка без записи: python build_site.py --dry)"
+  ],
+  "marker": "745408",
+  "metrika_id": "",
+  "site_url": "https://travelbadya.github.io/",
+  "bot": "travel_Badya_Bot",
+  "channel": "cheapflights_travel_ai",
+  "env_path": "../travel_agent/.env",
+  "programs": {
+    "level":     { "host": "", "promo_id": "" },
+    "travelata": { "host": "", "promo_id": "" },
+    "ostrovok":  { "host": "", "promo_id": "" },
+    "sutochno":  { "host": "", "promo_id": "" },
+    "tripster":  { "host": "", "promo_id": "" },
+    "kiwitaxi":  { "host": "", "promo_id": "" },
+    "cherehapa": { "host": "", "promo_id": "659" }
+  }
+}
